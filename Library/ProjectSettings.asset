@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  productGUID: 3f1d62eacc2805c4b9194da88c41346d
+  productGUID: 48eddb345d2ddf444bb5f375f270d238
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Warlocksson
+  productName: warlock
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -521,14 +521,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Warlocksson
+  metroPackageName: warlock
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Warlocksson
+  metroApplicationDescription: warlock
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -599,12 +599,11 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled:
-    UNet: 1
+  cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: e3e5b74d-bedb-4570-acef-b88644bbe73a
-  projectName: Warlocksson
+  cloudProjectId: 07c2cdbb-0867-435f-a9dc-634a6c8b9f76
+  projectName: warlock
   organizationId: bjoernestlind
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
