@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		curHealth = maxHealth;
-		InvokeRepeating ("decresehealth", 0.01f, 0.01f);
 	}
 	
 	// Update is called once per frame
@@ -17,7 +16,7 @@ public class PlayerHealth : MonoBehaviour {
 		
 	}
 
-	void decresehealth(){
+	public void decresehealth(){
 		curHealth -= 0.02f;
 		float calcHealth = curHealth / maxHealth * 0.5f;
 		SetHealthBar (calcHealth);
@@ -26,6 +25,5 @@ public class PlayerHealth : MonoBehaviour {
 	public void SetHealthBar(float myHealth){
 		healthBar.transform.localScale = new Vector3 (myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
 	}
-
 
 }
