@@ -6,7 +6,7 @@ public class SkeletonController : MonoBehaviour {
 	static float moveSpeed = 0.1F;
 	public float x;
 	public float y;
-	public GameObject platform;
+	private GameObject platform;
 	Animator anim;
 	Animation a1; 
 
@@ -18,6 +18,7 @@ public class SkeletonController : MonoBehaviour {
 		anim.SetBool ("isAttacking", false);
 		anim.SetBool ("isMoving", false);
 		ph = GetComponent<PlayerHealth> ();
+        platform = GameObject.FindGameObjectWithTag("platform");
 		x = platform.transform.localPosition.x;
 		y = platform.transform.localPosition.z;
 	}
@@ -73,8 +74,8 @@ public class SkeletonController : MonoBehaviour {
 		if (a1.IsPlaying ("Attack") == false) { // attack kan återigen användas
 			anim.SetBool ("isAttacking", true);
 		}
-		//Inte klar! inkludera alla sidor och diagonalt!
-		if(gameObject.transform.localPosition.x >= platform.transform.localScale.x/2){
+        
+		if(!platform.GetComponent<BoxCollider>().bounds.Contains(gameObject.transform.position)){
 			ph.decreaseHealth ();
 		}
 		
