@@ -8,11 +8,15 @@ public class SkeletonController : MonoBehaviour {
 	public float y;
 	public GameObject platform;
 	Animator anim;
+	Animation a1; 
 
 	PlayerHealth ph;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		a1 = GetComponent<Animation> ();
+		anim.SetBool ("isAttacking", false);
+		anim.SetBool ("isMoving", false);
 		ph = GetComponent<PlayerHealth> ();
 		x = platform.transform.localPosition.x;
 		y = platform.transform.localPosition.z;
@@ -60,6 +64,15 @@ public class SkeletonController : MonoBehaviour {
 			}
 		} 
 
+		if (Input.GetKey (KeyCode.M)) {
+			if (anim.GetBool("isAttacking")==false) {
+				anim.SetTrigger ("Attack");
+				anim.SetBool ("isAttacking", true);
+			}
+		}
+		if (a1.IsPlaying ("Attack") == false) { // attack kan återigen användas
+			anim.SetBool ("isAttacking", true);
+		}
 		//Inte klar! inkludera alla sidor och diagonalt!
 		if(gameObject.transform.localPosition.x >= platform.transform.localScale.x/2){
 			ph.decreaseHealth ();
