@@ -6,7 +6,7 @@ public class SkeletonController : MonoBehaviour {
 	static float moveSpeed = 0.1F;
 	public float x;
 	public float y;
-	public GameObject platform;
+	private GameObject platform;
 	Animator anim;
 
 	PlayerHealth ph;
@@ -14,6 +14,7 @@ public class SkeletonController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 		ph = GetComponent<PlayerHealth> ();
+        platform = GameObject.FindGameObjectWithTag("platform");
 		x = platform.transform.localPosition.x;
 		y = platform.transform.localPosition.z;
 	}
@@ -59,9 +60,8 @@ public class SkeletonController : MonoBehaviour {
 				gameObject.transform.localEulerAngles = new Vector3 (gameObject.transform.localEulerAngles.x, 180F, gameObject.transform.localEulerAngles.z);
 			}
 		} 
-
-		//Inte klar! inkludera alla sidor och diagonalt!
-		if(gameObject.transform.localPosition.x >= platform.transform.localScale.x/2){
+        
+		if(!platform.GetComponent<BoxCollider>().bounds.Contains(gameObject.transform.position)){
 			ph.decreaseHealth ();
 		}
 		
