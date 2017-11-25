@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkeletonController : MonoBehaviour {
-	static float moveSpeed = 0.05F;
+	static float moveSpeed = 0.1F;
 	public float x;
 	public float y;
 	public GameObject platform;
@@ -62,7 +62,7 @@ public class SkeletonController : MonoBehaviour {
 
 		//Inte klar! inkludera alla sidor och diagonalt!
 		if(gameObject.transform.localPosition.x >= platform.transform.localScale.x/2){
-			ph.decresehealth ();
+			ph.decreaseHealth ();
 		}
 		
 	}

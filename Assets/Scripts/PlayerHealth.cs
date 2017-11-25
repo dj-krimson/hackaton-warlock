@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
 	public float maxHealth = 100f;
-	public float curHealth = 0f;
+	public float curHealth;
 	public GameObject healthBar;
 	// Use this for initialization
 	void Start () {
-		curHealth = maxHealth;
+		curHealth = maxHealth-10F;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//decreaseHealth ();
 	}
 
-	public void decresehealth(){
+	public void decreaseHealth(){
 		curHealth -= 0.02f;
 		float calcHealth = curHealth / maxHealth * 0.5f;
 		SetHealthBar (calcHealth);
